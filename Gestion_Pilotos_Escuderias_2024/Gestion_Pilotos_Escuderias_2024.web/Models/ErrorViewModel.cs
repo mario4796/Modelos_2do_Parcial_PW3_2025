@@ -1,4 +1,4 @@
-namespace Gestion_Pilotos_Escuderias_2024.Web.Models
+namespace Gestion_Pilotos_Escuderias_2024.web.Models
 {
     public class ErrorViewModel
     {

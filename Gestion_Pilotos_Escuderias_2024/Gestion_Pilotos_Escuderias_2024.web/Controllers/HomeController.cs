@@ -1,8 +1,8 @@
 using System.Diagnostics;
-using Gestion_Pilotos_Escuderias_2024.Web.Models;
+using Gestion_Pilotos_Escuderias_2024.web.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Gestion_Pilotos_Escuderias_2024.Web.Controllers
+namespace Gestion_Pilotos_Escuderias_2024.web.Controllers
 {
     public class HomeController : Controller
     {
