@@ -1,0 +1,33 @@
+﻿@model Gestion_Pilotos_Escuderias_2024.Web.Models.PilotoViewModel
+﻿@using Gestion_Pilotos_Escuderias_2024.Data.EF
+@{
+}
+
+<h2>Agregar Piloto</h2>
+<form asp-action="AgregarPiloto" method="post">
+    <div class="form-group">
+        <label for="NombrePiloto">Nombre del Piloto</label>
+        <input type="text" class="form-control" id="NombrePiloto" name="NombrePiloto" required />
+    </div>
+
+    <div class="form-group">
+        <label for="EscuderiaId">Escudería</label>
+        <select class="form-control" id="IdEscuderia" name="IdEscuderia">
+            <option value="">-- Seleccione una escudería --</option>
+            @foreach (var escuderia in (List<Escuderium>)ViewBag.Escuderias)
+            {
+                @if (ViewBag.EscuderiaSeleccionada == escuderia.IdEscuderia)
+                {
+                    <option selected value="@escuderia.IdEscuderia">@escuderia.NombreEscuderia</option>
+                }
+                else
+                {
+                    <option value="@escuderia.IdEscuderia">@escuderia.NombreEscuderia</option>
+                }
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Agregar Piloto</button>
+
+</form>

@@ -1,7 +1,14 @@
+using Gestion_Pilotos_Escuderias_2024.Data.EF;
+using Gestion_Pilotos_Escuderias_2024.Logica;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IPilotoLogica, PilotoLogica>();
+builder.Services.AddScoped<IEscuderiaLogica, EscuderiaLogica>();
+builder.Services.AddScoped<MiDbContext>();
 
 var app = builder.Build();
 
