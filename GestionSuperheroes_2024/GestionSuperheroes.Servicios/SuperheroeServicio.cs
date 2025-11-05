@@ -7,7 +7,7 @@ namespace GestionSuperheroes.Servicios
     {
         void AgregarSuperheroe(Superheroe superheroe);
         void EliminarSuperheroe(int id);
-        List<Superheroe> ObtenerSuperheroesPorDestino(int value);
+        List<Superheroe> ObtenerSuperheroesPorUniverso(int value);
         List<Superheroe> ObtenerTodosLosSuperheroes();
     }
     public class SuperheroeServicio : ISuperheroeServicio
@@ -34,7 +34,7 @@ namespace GestionSuperheroes.Servicios
             }
         }
 
-        public List<Superheroe> ObtenerSuperheroesPorDestino(int value)
+        public List<Superheroe> ObtenerSuperheroesPorUniverso(int value)
         {
             return _context.Superheroes
                 .Include(s => s.IdUniversoNavigation)

@@ -31,13 +31,15 @@ namespace GestionSuperheroes.Web.Controllers
                 CargarDropdownUniversos();
                 return View(model);
             }
+            // Validar que el universo exista no es obligatorio si se usa un dropdown, pero se incluye por seguridad
             var universos = _universoServicio.ObtenerUniverosPorId(model.IdUniverso);
             if (universos == null)
             {
-                ModelState.AddModelError("IdDestino", "El universo destino no existe.");
+                ModelState.AddModelError("IdUniverso", "El universo destino no existe.");
                 CargarDropdownUniversos();
                 return View(model);
             }
+
             var superheroe = new Superheroe
             {
                 NombreSuperheroe = model.NombreSuperheroe,
@@ -58,7 +60,7 @@ namespace GestionSuperheroes.Web.Controllers
             if(IdUniverso.HasValue)
             {
                 ViewBag.IdUniverso = IdUniverso.Value;
-                return View(_superheroeServicio.ObtenerSuperheroesPorDestino(IdUniverso.Value));
+                return View(_superheroeServicio.ObtenerSuperheroesPorUniverso(IdUniverso.Value));
             }
             else
             {
