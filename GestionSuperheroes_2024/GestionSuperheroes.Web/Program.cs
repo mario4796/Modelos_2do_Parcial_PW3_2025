@@ -1,4 +1,5 @@
 using GestionSuperheroes.Data.EF;
+using GestionSuperheroes.Servicios;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,8 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<MiDbContext>();
-builder.Services.AddScoped<GestionSuperheroes.Servicios.ISuperheroeServicio, GestionSuperheroes.Servicios.SuperheroeServicio>();
-builder.Services.AddScoped<GestionSuperheroes.Servicios.IUniversoServicio, GestionSuperheroes.Servicios.UniversoServicio>();
+builder.Services.AddScoped<ISuperheroeServicio, SuperheroeServicio>();
+builder.Services.AddScoped<IUniversoServicio, UniversoServicio>();
 
 var app = builder.Build();
 
