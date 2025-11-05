@@ -5,7 +5,7 @@ namespace GestionSuperheroes.Servicios
     public interface IUniversoServicio
     {
         Universo ObtenerUniverosPorId(int idUniverso);
-        List<Universo> ServicioObtenerUniversos();
+        List<Universo> ObtenerUniversos();
     }
     public class UniversoServicio : IUniversoServicio
     {
@@ -20,7 +20,7 @@ namespace GestionSuperheroes.Servicios
             return _context.Universos.Find(idUniverso);
         }
 
-        public List<Universo> ServicioObtenerUniversos()
+        public List<Universo> ObtenerUniversos()
         {
             return _context.Universos
                 .OrderBy(u => u.NombreUniverso)

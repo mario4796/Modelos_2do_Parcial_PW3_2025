@@ -18,7 +18,7 @@ namespace GestionSuperheroes.Web.Controllers
         [HttpGet]
         public IActionResult AgregarSuperheroe()
         {
-            var universos = _universoServicio.ServicioObtenerUniversos();
+            var universos = _universoServicio.ObtenerUniversos();
             ViewBag.Universos = universos;
             return View();
         }
@@ -76,7 +76,7 @@ namespace GestionSuperheroes.Web.Controllers
 
         private void CargarDropdownUniversos()
         {
-            var universos = _universoServicio.ServicioObtenerUniversos();
+            var universos = _universoServicio.ObtenerUniversos();
             ViewBag.Universos = universos;
         }
     }
